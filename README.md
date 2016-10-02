@@ -31,9 +31,13 @@
 
 ###예시
 ```js
-const template = "${word}$이 잘못되었습니다.";
+const template = new MakeHangulJosaString();
+const string = "${word}$이 잘못되었습니다.";
 let words = { word: "비밀번호" };
-let result = addJosa(template, words);
+let result = template(string, words);
 // result
 // -> "비밀번호가 잘못되었습니다."
+
+// ES2015 template string
+let result = template`${words.word}$이 잘못되었습니다.`;
 ```
